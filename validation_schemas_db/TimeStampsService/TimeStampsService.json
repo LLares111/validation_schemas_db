@@ -1,0 +1,61 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "name": "integer",
+                "maximum": 10000,
+                "minimum": 1
+            },
+            "mapping": {
+                //"table": "nazwa tabeli w bazie danych"
+            },
+            "description": "ID komunikatu"
+        },
+        {
+            "name": "ack_service",
+            "type": {
+                "name": "string",
+                "nullable": true,
+                "maxlength": 100
+            },
+            "mapping": {
+                //"table": "nazwa tabeli w bazie danych"
+            },
+            "description": "Jeżeli komunikat jest odpowiedzią, to tu jest wstawiana nazwa usługi, na której komunikat odpowiadamy"
+        },
+        {
+            "name": "ack_id",
+            "type": {
+                "name": "integer",
+                "maximum": 10000,
+                "minimum": 0
+            },
+            "mapping": {
+                //"table": "nazwa tabeli w bazie danych"
+            },
+            "description": "ID komunikatu, na który idzie odpowiedź, Jeśli 0, komunikat nie jest odpowiedzią"
+        },
+        {
+            "name": "local_time",
+            "type": {
+                "name": "string",
+                "nullable": true,
+                "maxlength": 20
+            },
+            "mapping": {
+                //"table": "nazwa tabeli w bazie danych"
+            },
+            "description": "Czas lokalny w chwili wysyłania komunikatu; Wartość w [ms] pomniejszona o 1325406563290i64 (tj. ms od 01.01.2012 - stała Radka) przekonwertowana do string"
+        }
+    ],
+    "header": {
+        "name": "TimeStampsService",
+        "channel": "TimeStampsService",
+        "mapping": {
+            //"table": "nazwa tabeli w bazie danych"
+        },
+        "service": "TimeStampsServer",
+        "description": "some description"
+    }
+}
